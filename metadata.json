@@ -1,0 +1,5 @@
+{
+  "name": "Trinken Type Test",
+  "description": "A real-time multiplayer typing test with global leaderboards and Google authentication.",
+  "requestFramePermissions": []
+}

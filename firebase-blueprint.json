@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user of the typing test app.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "displayName"]
+    },
+    "Score": {
+      "title": "Score",
+      "description": "A typing test score submission.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "wpm": { "type": "number" },
+        "accuracy": { "type": "number" },
+        "time": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "userName", "wpm", "accuracy", "time", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile information."
+    },
+    "/scores/{scoreId}": {
+      "schema": "Score",
+      "description": "Global leaderboard scores."
+    }
+  }
+}
